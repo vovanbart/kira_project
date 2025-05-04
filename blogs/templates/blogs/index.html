@@ -1,0 +1,17 @@
+{% extends 'blogs/base.html' %}
+{% block title %}Все записи{% endblock %}
+{% block content %}
+  <p><a href="{% url 'blogs:post_create' %}">Новая запись</a></p>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <strong>{{ post.title }}</strong>
+        ({{ post.date_added|date:"d.m.Y H:i" }})
+        <a href="{% url 'blogs:post_edit' post.pk %}">ред.</a><br>
+        {{ post.text|truncatechars:120 }}
+      </li>
+    {% empty %}
+      <li>Записей пока нет.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
