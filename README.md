@@ -12,7 +12,6 @@
 - `pip install Django`
 ### Создание проекта
 - `django-admin startproject Blog`
-- `cd Blog`
 - `python manage.py startapp blogs`
 ### Проверка, что все сработало как надо
 - `python manage.py runserver`
